@@ -1,0 +1,36 @@
+# AeroSpace is the Darwin replacement for the labwc workspace/window workflow.
+# skhd owns the keybindings and calls `aerospace` commands so bindings stay close
+# to the old rc.xml layout.
+
+start-at-login = true
+after-login-command = []
+after-startup-command = []
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = true
+
+[gaps]
+inner.horizontal = 0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace 1'
