@@ -1,58 +1,12 @@
-# labwc W-* bindings mapped to macOS cmd-* where practical.
-# Window/workspace commands are delegated to AeroSpace.
-
-# Workspace switching, matching A-Tab / A-S-Tab and W-h / W-l.
-alt - tab : aerospace workspace next
-alt + shift - tab : aerospace workspace prev
-cmd - h : aerospace workspace prev
-cmd - l : aerospace workspace next
-cmd + shift - h : aerospace move-node-to-workspace prev
-cmd + shift - l : aerospace move-node-to-workspace next
-
-# Window focus and close.
-cmd - tab : aerospace focus --dfs-next
-cmd - grave : aerospace focus --dfs-prev
-cmd - q : aerospace close
-alt - f4 : aerospace close
-
-# Terminal focus/open, like W-Return in labwc.
-cmd - return : open -a Kitty
-
-# App launch/focus bindings copied from labwc where macOS equivalents exist.
-cmd - 1 : open -a Firefox
-cmd - 2 : open -a Kitty
-cmd - 4 : open -a Obsidian
-cmd - s : open -a Strawberry
+cmd - 1 : open -a Helium
+cmd - 2 : open -a kitty
+cmd - 3 : open -a Obsidian
+cmd - s : open "/Applications/Nix Apps/Feishin.app"
 cmd - x : open -a Vesktop
-cmd - z : open -a Preview
 cmd - f : open -a Finder
-
-# macOS-native app launcher replacement for wofi.
-cmd - space : open -a Raycast
-
-# Window layout and movement approximations for labwc snap/move bindings.
-cmd - w : aerospace fullscreen
-cmd - a : aerospace fullscreen
+cmd - z : open -a sioyek
+cmd - w : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to click menu item "Zoom" of menu "Window" of menu bar 1'
 cmd - left : aerospace move left
 cmd - right : aerospace move right
-cmd - up : aerospace move up
-cmd - down : aerospace move down
-alt - left : aerospace focus left
-alt - right : aerospace focus right
-alt - up : aerospace focus up
-alt - down : aerospace focus down
-
-# Resize approximations for the old edge/snap workflow.
-cmd + shift - left : aerospace resize width -80
-cmd + shift - right : aerospace resize width +80
-cmd + shift - up : aerospace resize height -80
-cmd + shift - down : aerospace resize height +80
-
-# Utilities.
-ctrl + shift - escape : open -a Activity\ Monitor
-cmd + shift - s : screencapture -i ~/Desktop/screenshot-$(date +%Y-%m-%d-%H%M%S).png
-
-# Media keys. macOS handles most of these itself, but keep explicit fallbacks.
-sound_down : osascript -e 'set volume output volume ((output volume of (get volume settings)) - 5)'
-sound_up : osascript -e 'set volume output volume ((output volume of (get volume settings)) + 5)'
-mute : osascript -e 'set volume with output muted'
+cmd - up : aerospace fullscreen
+cmd - down : aerospace layout floating

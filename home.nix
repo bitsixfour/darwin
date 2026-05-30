@@ -81,9 +81,12 @@
     shellAliases = {
       v = "nvim";
       lg = "lazygit";
-      rebuild = "darwin-rebuild switch --flake ~/git/darwin-config#will-mac";
+      rebuild = "darwin-rebuild switch --flake /etc/nixos#darwin";
+      nixclean = "nix-collect-garbage -d && nix store optimise";
     };
   };
+
+  services.syncthing.enable = true;
 
   home.file.".config/skhd/README.md".text = ''
     skhd mirrors the old labwc workflow as closely as macOS allows.
@@ -91,6 +94,6 @@
     W/Super from labwc is mapped to cmd.
     Alt bindings are mapped to alt.
     App focus-or-open bindings use `open -a` because macOS owns app activation.
-    Window movement/workspace operations are delegated to AeroSpace.
+    Window tiling and movement are delegated to AeroSpace.
   '';
 }

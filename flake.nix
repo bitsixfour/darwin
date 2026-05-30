@@ -24,11 +24,11 @@
 
   outputs = inputs@{ nixpkgs, nix-darwin, home-manager, stylix, nix-homebrew, ... }:
   let
-    username = "will";
+    username = "darwin";
     system = "aarch64-darwin";
   in
   {
-    darwinConfigurations."will-mac" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."darwin" = nix-darwin.lib.darwinSystem {
       inherit system;
       specialArgs = { inherit inputs username; };
       modules = [
