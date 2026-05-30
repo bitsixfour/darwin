@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, lib, username, ... }:
 
 {
   imports = [
@@ -11,25 +11,35 @@
 
   stylix.enable = true;
   stylix.base16Scheme = {
-    scheme = "coffee";
-    base00 = "181614";
-    base01 = "2e2c2a";
-    base02 = "484644";
-    base03 = "6e6c69";
-    base04 = "898785";
-    base05 = "c4c2bf";
-    base06 = "d4d2cf";
-    base07 = "ebe9e5";
-    base08 = "9a5a52";
-    base09 = "9e8060";
-    base0A = "a59772";
-    base0B = "7a8a64";
-    base0C = "688080";
-    base0D = "6878a0";
-    base0E = "866878";
-    base0F = "594c44";
+    scheme = "muted";
+    base00 = "141312";
+    base01 = "211f1e";
+    base02 = "333130";
+    base03 = "494746";
+    base04 = "696765";
+    base05 = "b3b1af";
+    base06 = "ceccca";
+    base07 = "e6e4e2";
+    base08 = "78605c";
+    base09 = "786c5c";
+    base0A = "6c785c";
+    base0B = "5c7860";
+    base0C = "5c6e78";
+    base0D = "5c6078";
+    base0E = "6e5c78";
+    base0F = "5c5c5c";
   };
-  stylix.targets.kitty.enable = false;
+  stylix.targets = {
+    kitty.enable = false;
+    bat.enable = true;
+    fish.enable = true;
+    fzf.enable = true;
+    neovim.enable = true;
+    zellij.enable = true;
+  };
+  home.activation.setWallpaper = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    /usr/bin/osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/${username}/main.jpg"'
+  '';
 
   home.packages = with pkgs; [
     fastfetch

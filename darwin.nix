@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, lib, username, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -19,7 +19,6 @@
   programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
-    aerospace
     bat
     cargo
     feishin
@@ -106,6 +105,26 @@
     enable = true;
     skhdConfig = builtins.readFile ./cfg/skhd/skhdrc;
   };
+
+  environment.systemPath = lib.mkAfter [ "/Applications/AeroSpace.app/Contents/MacOS" ];
+
+  system.activationScripts.aerospaceTCC.text = ''
+    TCC_DB="/Library/Application Support/com.apple.TCC/TCC.db"
+    BUNDLE="com.nikitabobko.AeroSpace"
+    APP="/Applications/AeroSpace.app"
+
+    if [ -f "$TCC_DB" ] && [ -d "$APP" ]; then
+      /usr/bin/sqlite3 "$TCC_DB" "
+        DELETE FROM access WHERE client = '$BUNDLE' AND service = 'kTCCServiceAccessibility';
+        INSERT OR IGNORE INTO access
+          (service, client, client_type, auth_value, auth_reason, csreq, policy_id,
+           indirect_object_identifier_type, indirect_object_identifier, flags, last_modified)
+        VALUES
+          ('kTCCServiceAccessibility', '$BUNDLE', 0, 1, 4,
+           NULL, NULL, 0, 'UNUSED', 0, 0);
+      " 2>/dev/null || true
+    fi
+  '';
 
   system.defaults = {
     NSGlobalDomain = {
