@@ -10,5 +10,6 @@ alt - left : aerospace move left
 alt - right : aerospace move right
 alt - up : aerospace fullscreen
 alt - down : aerospace layout floating
+alt - z : zathura
 alt - q : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to keystroke "w" using command down'
 

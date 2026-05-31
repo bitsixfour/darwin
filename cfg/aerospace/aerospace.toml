@@ -27,7 +27,7 @@ outer.right = 0
 2 = 'main'
 
 [[on-window-detected]]
-if = true
+check-further-callbacks = true
 run = 'layout floating'
 
 [[on-window-detected]]

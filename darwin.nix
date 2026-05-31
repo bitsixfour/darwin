@@ -44,6 +44,7 @@
     keepassxc
     rustc
     skhd
+    tailscale-gui
     tinymist
     typst
     wget
@@ -77,6 +78,7 @@
       "helix"
       "mas"
       "switchaudio-osx"
+
     ];
 
     casks = [
