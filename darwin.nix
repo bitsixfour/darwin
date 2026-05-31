@@ -44,7 +44,7 @@
     keepassxc
     rustc
     skhd
-    tailscale-gui
+
     tinymist
     typst
     wget
@@ -95,13 +95,10 @@
       "qbittorrent"
       "roblox"
       "raycast"
+      "tailscale"
       "vesktop"
       "zed"
     ];
-  };
-
-  services.tailscale = {
-    enable = true;
   };
 
   services.skhd = {
