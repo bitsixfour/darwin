@@ -1,14 +1,14 @@
-cmd - 1 : open -a Helium
-cmd - 2 : open -a kitty
-cmd - 3 : open -a Obsidian
-cmd - s : open "/Applications/Nix Apps/Feishin.app"
-cmd - x : open -a Vesktop
-cmd - f : open -a Finder
-cmd - c : open -a KeePassXC
-cmd - z : zathura
-cmd - w : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to click menu item "Zoom" of menu "Window" of menu bar 1'
-cmd - left : aerospace move left
-cmd - right : aerospace move right
-cmd - up : aerospace fullscreen
-cmd - down : aerospace layout floating
+alt - 1 : open -a Helium
+alt - 2 : open -a Ghostty
+alt - 3 : open -a Obsidian
+alt - s : open "/Applications/Nix Apps/Feishin.app"
+alt - x : open -a Vesktop
+alt - f : open -a Finder
+alt - c : open -a KeePassXC
+alt - w : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to click menu item "Zoom" of menu "Window" of menu bar 1'
+alt - left : aerospace move left
+alt - right : aerospace move right
+alt - up : aerospace fullscreen
+alt - down : aerospace layout floating
+alt - q : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to keystroke "w" using command down'
 

@@ -72,6 +72,7 @@
   };
 
   home.file.".aerospace.toml".source = ./cfg/aerospace/aerospace.toml;
+  home.file.".config/ghostty/config".source = ./cfg/ghostty/config;
   home.file.".config/skhd/skhdrc".source = ./cfg/skhd/skhdrc;
   home.file.".config/fastfetch/config.jsonc".text = ''
     {
