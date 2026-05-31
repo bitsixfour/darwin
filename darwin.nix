@@ -41,7 +41,8 @@
     pkg-config
     ripgrep
     rust-analyzer
-    sioyek
+    keepassxc
+    zathura
     rustc
     skhd
     tinymist

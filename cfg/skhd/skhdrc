@@ -4,9 +4,11 @@ cmd - 3 : open -a Obsidian
 cmd - s : open "/Applications/Nix Apps/Feishin.app"
 cmd - x : open -a Vesktop
 cmd - f : open -a Finder
-cmd - z : open -a sioyek
+cmd - c : open -a KeePassXC
+cmd - z : zathura
 cmd - w : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to click menu item "Zoom" of menu "Window" of menu bar 1'
 cmd - left : aerospace move left
 cmd - right : aerospace move right
 cmd - up : aerospace fullscreen
 cmd - down : aerospace layout floating
+
