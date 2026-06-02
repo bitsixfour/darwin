@@ -6,11 +6,10 @@ alt - x : open -a Vesktop
 alt - f : open -a Finder
 alt - c : open -a KeePassXC
 alt - w : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to click menu item "Zoom" of menu "Window" of menu bar 1'
-alt - z: open -a Okular
+alt - z : open -a Okular
 alt - left : aerospace move left
 alt - right : aerospace move right
 alt - up : aerospace fullscreen
 alt - down : aerospace layout floating
-alt - z : zathura
 alt - q : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to keystroke "m" using command down'
 # alt - space: Raycast (It's the default anyways)

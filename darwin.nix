@@ -86,9 +86,12 @@
       "aerospace"
       "desktoppr"
       "helium-browser"
+      "jellyfin-media-player"
       "firefox"
+      "cmux"
       "gimp"
       "kicad"
+      # "okular" # installed manually; imperfect on macOS
       "kitty"
       "obsidian"
       "prismlauncher"
